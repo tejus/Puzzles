@@ -11,11 +11,8 @@ fun incrementalRanges(n: Int): Sequence<Int> {
 }
 
 //https://codegolf.stackexchange.com/questions/186233/incremental-ranges
-fun incrementalRanges2(x: Int, n: Int): MutableList<Int> {
-    val list = mutableListOf<Int>()
-    for (v in 0 until x)
-        list.add(v / n + v % n + 1)
-    return list
+fun incrementalRanges2(x: Int, n: Int): List<Int> {
+    return (0 until x).map { it / n + it % n + 1 }
 }
 
 fun main() {
